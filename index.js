@@ -26,7 +26,7 @@ const post = {
     id: '89gWT9S5mgx3gCJeADaS3Y57iBBot2QDVWaQweHbRxqphuHHfBJySiASCM8QRMRUhC6B2Mud2crtXHKCRkx96A8SJQAsUCk',
     link: 'plowsof.github.io/index-old.html#head_patting_girl',
     description: '89gWT9S5mgx3gCJeADaS3Y57iBBot2QDVWaQweHbRxqphuHHfBJySiASCM8QRMRUhC6B2Mud2crtXHKCRkx96A8SJQAsUCk',
-    content: 'test Content',
+    date: new Date('1995-12-17T03:24:00'),
     image: 'https://moneroart.neocities.org/monero.png'
 }
 
@@ -61,6 +61,7 @@ posts.forEach(post => {
                 link: "https://example.com/reggiemiller"
             }
         ],
+        date: post.date,
         image: post.image
     });
 });
