@@ -57,7 +57,8 @@ const generatePost = (wishItem: XmrWishItemV2, metadata: XmrWishlistV2['metadata
         description: `
         <p><strong>${wishItem.description}</strong></p>
         <p>Donation Goal: ${wishItem.goal}</p>
-        <p>Donation Address: ${wishItem.address}</p>
+        <p>Donation Address:</p>
+		<p>${wishItem.address}</p>
         <p><img class="thumbnail" src="${wishItem.qr_img_url}" alt="Donate to this commission" /></p>
 		<p><a href="${metadata.url}#${wishItem.id}">View this commission on ${metadata.title}</a></p>
         `,
