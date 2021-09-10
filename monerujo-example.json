@@ -1,0 +1,24 @@
+{
+    "wishes": [{
+        "title": "PocketChange",
+        "id": "pocket_change",
+        "description": "One-click creation of extra outputs allowing frequent spending",
+        "goal": 17,
+        "total": 4.263764871999999,
+        "contributors": 8,
+        "address": "8AVQbwFvLh4WqGcdDrSso5ddJpKxdJzuXT6LMTnyXowDR2PG6Dc5TjkS4QeE14eHAqV9KQZgNx9bSWjb9jUnKuLV8GMbW3D",
+        "percent": 25.080969835294116,
+        "created_date": "date",
+        "modified_date": "date",
+        "qr_img_url": "qr",
+        "author_name": "Plowsof",
+        "author_email": "Plowsof@plowsof.com"
+    }],
+    "metadata": {
+        "modified": "2021-09-10 16:55:30.343708",
+        "title": "Monerujo Wishlist",
+        "description": "Donate to new Moneroujo Things!",
+        "image": "https://funding.monerujo.app/monerujo-funding.svg",
+        "url": "https://funding.monerujo.app/"
+    }
+}
