@@ -59,10 +59,10 @@ const generatePost = (wishItem: XmrWishItemV2, metadata: XmrWishlistV2['metadata
         <p>Donation Goal: ${wishItem.goal}</p>
         <p>Donation Address: ${wishItem.address}</p>
         <p><img class="thumbnail" src="${wishItem.qr_img_url}" alt="Donate to this commission" /></p>
-		<p><a href="${metadata.url}>View this commission on ${metadata.url}</a></p>
+		<p><a href="${metadata.url}#${wishItem.id}">View this commission on ${metadata.title}</a></p>
         `,
         date: wishItem.created,
-        image: metadata.image_url,
+        image: 'https://moneroart.neocities.org/monerochan-beach.jpg',
 		author: [{
 			name: wishItem.author_name,
 			email: wishItem.author_email,
@@ -84,7 +84,7 @@ export const generateFeeds = async(): Promise<void> => {
         id: wishlist.metadata.title,
         link: wishlist.metadata.url,
         language: "en",
-        image: wishlist.metadata.image_url,
+        image: 'https://moneroart.neocities.org/monerochan-beach.jpg',
         copyright: "",
         generator: "awesome", // optional, default = 'Feed for Node.js'
         feedLinks: {
