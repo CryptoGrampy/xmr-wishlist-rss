@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "genXml": "node index.js > test.xml",
+        "start": "tsc && node dist/index.js > test.xml",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "type": "module",
@@ -21,5 +21,9 @@
     "dependencies": {
         "axios": "^0.21.4",
         "feed": "^4.2.2"
+    },
+    "devDependencies": {
+        "@types/node": "^16.9.1",
+        "typescript": "^4.4.2"
     }
 }
