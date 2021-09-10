@@ -4,7 +4,7 @@
         <title>XMR Community Art Fund</title>
         <link>https://moneroart.neocities.org/</link>
         <description>Contribute to the XMR Art Community</description>
-        <lastBuildDate>Fri, 10 Sep 2021 17:45:13 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 10 Sep 2021 17:50:40 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>awesome</generator>
         <language>en</language>
@@ -19,16 +19,17 @@
             <title><![CDATA[Headpatting Doggirl Wownero]]></title>
             <pubDate>Sun, 17 Dec 1995 09:24:00 GMT</pubDate>
             <description><![CDATA[
-        Headpatting doggirl Wownero
-        Goal: 0.4
-        Total Donated: 0.4
-        Current # of Contributors: 1
-        Donation Address: 89gWT9S5mgx3gCJeADaS3Y57iBBot2QDVWaQweHbRxqphuHHfBJySiASCM8QRMRUhC6B2Mud2crtXHKCRkx96A8SJQAsUCk
-        Dummy QR: <img class="thumbnail" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.-9N4K3Syg-OgbET8dgDwqAHaHa%26pid%3DApi&f=1" alt="Cheerleader" />
+        <p><strong>Headpatting doggirl Wownero</strong></p>
+        <p>Goal: 0.4</p>
+        <p>Total Donated: 0.4</p>
+        <p>Current # of Contributors: 1</p>
+        <p>Donation Address: 89gWT9S5mgx3gCJeADaS3Y57iBBot2QDVWaQweHbRxqphuHHfBJySiASCM8QRMRUhC6B2Mud2crtXHKCRkx96A8SJQAsUCk</p>
+        <p>Dummy QR:</p> 
+        <p><img class="thumbnail" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.-9N4K3Syg-OgbET8dgDwqAHaHa%26pid%3DApi&f=1" alt="Cheerleader" /></p>
         ]]></description>
             <author>janedoe@example.com (Jane Doe)</author>
             <author>joesmith@example.com (Joe Smith)</author>
-            <enclosure url="https://moneroart.neocities.org/monero.png" length="0" type="image/png"/>
+            <enclosure url="https://moneroart.neocities.org/mememe.gif" length="0" type="image/gif"/>
         </item>
     </channel>
 </rss>

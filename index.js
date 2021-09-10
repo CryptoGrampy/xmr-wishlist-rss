@@ -36,15 +36,16 @@ const generateFeeds = async() => {
         id: '89gWT9S5mgx3gCJeADaS3Y57iBBot2QDVWaQweHbRxqphuHHfBJySiASCM8QRMRUhC6B2Mud2crtXHKCRkx96A8SJQAsUCk',
         link: 'plowsof.github.io/index-old.html#head_patting_girl',
         description: `
-        ${commissionData.desc}
-        Goal: ${commissionData.goal}
-        Total Donated: ${commissionData.total}
-        Current # of Contributors: ${commissionData.contributors}
-        Donation Address: ${commissionData.address}
-        Dummy QR: <img class="thumbnail" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.-9N4K3Syg-OgbET8dgDwqAHaHa%26pid%3DApi&f=1" alt="Cheerleader" />
+        <p><strong>${commissionData.desc}</strong></p>
+        <p>Goal: ${commissionData.goal}</p>
+        <p>Total Donated: ${commissionData.total}</p>
+        <p>Current # of Contributors: ${commissionData.contributors}</p>
+        <p>Donation Address: ${commissionData.address}</p>
+        <p>Dummy QR:</p> 
+        <p><img class="thumbnail" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.-9N4K3Syg-OgbET8dgDwqAHaHa%26pid%3DApi&f=1" alt="Cheerleader" /></p>
         `,
         date: new Date('1995-12-17T03:24:00'),
-        image: 'https://moneroart.neocities.org/monero.png'
+        image: 'https://moneroart.neocities.org/mememe.gif'
     }
 
     const posts = [post]
