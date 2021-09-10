@@ -45,7 +45,7 @@ const generateFeeds = async() => {
         <p><img class="thumbnail" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.-9N4K3Syg-OgbET8dgDwqAHaHa%26pid%3DApi&f=1" alt="Cheerleader" /></p>
         `,
         date: new Date('1995-12-17T03:24:00'),
-        image: 'https://moneroart.neocities.org/mememe.gif'
+        image: 'https://moneroart.neocities.org/monerochan-beach.jpg'
     }
 
     const posts = [post]

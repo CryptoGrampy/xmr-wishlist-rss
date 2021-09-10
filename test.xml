@@ -4,7 +4,7 @@
         <title>XMR Community Art Fund</title>
         <link>https://moneroart.neocities.org/</link>
         <description>Contribute to the XMR Art Community</description>
-        <lastBuildDate>Fri, 10 Sep 2021 17:50:40 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 10 Sep 2021 17:53:32 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>awesome</generator>
         <language>en</language>
@@ -29,7 +29,7 @@
         ]]></description>
             <author>janedoe@example.com (Jane Doe)</author>
             <author>joesmith@example.com (Joe Smith)</author>
-            <enclosure url="https://moneroart.neocities.org/mememe.gif" length="0" type="image/gif"/>
+            <enclosure url="https://moneroart.neocities.org/monerochan-beach.jpg" length="0" type="image/jpg"/>
         </item>
     </channel>
 </rss>
