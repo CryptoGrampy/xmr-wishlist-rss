@@ -68,10 +68,10 @@ const generatePost = (wishItem: XmrWishItemV1): Item => {
     }
 }
 
-export const generateFeeds = async() => {
+export const generateFeeds = async(): Promise<void> => {
     const wishlist = await getData()
 
-	let postList: Item[] = []
+	const postList: Item[] = []
 
 	wishlist.forEach(wish => postList.push(generatePost(wish)))
 
