@@ -8,13 +8,14 @@
         "contributors": 8,
         "address": "8AVQbwFvLh4WqGcdDrSso5ddJpKxdJzuXT6LMTnyXowDR2PG6Dc5TjkS4QeE14eHAqV9KQZgNx9bSWjb9jUnKuLV8GMbW3D",
         "percent": 25.080969835294116,
-        "created_date": "date",
-        "modified_date": "date",
+        "created": "date",
+        "modified": "date",
         "qr_img_url": "qr",
         "author_name": "Plowsof",
         "author_email": "Plowsof@plowsof.com"
     }],
     "metadata": {
+        "created": "date",
         "modified": "2021-09-10 16:55:30.343708",
         "title": "Monerujo Wishlist",
         "description": "Donate to new Moneroujo Things!",
