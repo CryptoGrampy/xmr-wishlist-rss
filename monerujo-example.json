@@ -19,6 +19,8 @@
         "title": "Monerujo Wishlist",
         "description": "Donate to new Moneroujo Things!",
         "image": "https://funding.monerujo.app/monerujo-funding.svg",
-        "url": "https://funding.monerujo.app/"
+        "url": "https://funding.monerujo.app/",
+        "created_by": "Monerujo",
+        "email": "monerujo@monerujo.com"
     }
 }
