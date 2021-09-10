@@ -49,22 +49,20 @@ const getData = async(): Promise<XmrWishlistV2> => {
 	return res.data as XmrWishlistV2
 }
 
-const generatePost = (wishItem: XmrWishItemV2, url: string): Item => {
+const generatePost = (wishItem: XmrWishItemV2, metadata: XmrWishlistV2['metadata']): Item => {
 	return {
         title: wishItem.description,
         id: wishItem.id,
-        link: `${url}#${wishItem.id}`,
+        link: `${metadata.url}#${wishItem.id}`,
         description: `
         <p><strong>${wishItem.description}</strong></p>
-        <p>Goal: ${wishItem.goal}</p>
-        <p>Total Donated: ${wishItem.total}</p>
-        <p>Current # of Contributors: ${wishItem.contributors}</p>
+        <p>Donation Goal: ${wishItem.goal}</p>
         <p>Donation Address: ${wishItem.address}</p>
-        <p>QR:</p>
         <p><img class="thumbnail" src="${wishItem.qr_img_url}" alt="Donate to this commission" /></p>
+		<p><a href="${metadata.url}>View this commission on ${metadata.url}</a></p>
         `,
         date: wishItem.created,
-        image: 'https://moneroart.neocities.org/monerochan-beach.jpg',
+        image: metadata.image_url,
 		author: [{
 			name: wishItem.author_name,
 			email: wishItem.author_email,
@@ -78,7 +76,7 @@ export const generateFeeds = async(): Promise<void> => {
 
 	const postList: Item[] = []
 
-	wishlist.wishlist.forEach(wish => postList.push(generatePost(wish, wishlist.metadata.url)))
+	wishlist.wishlist.forEach(wish => postList.push(generatePost(wish, wishlist.metadata)))
 
     const feed = new Feed({
         title: wishlist.metadata.title,
