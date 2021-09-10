@@ -1,33 +1,32 @@
 import { Feed } from "feed";
 
 const feed = new Feed({
-    title: "Feed Title",
-    description: "This is my personal feed!",
-    id: "http://example.com/",
-    link: "http://example.com/",
-    language: "en", // optional, used only in RSS 2.0, possible values: http://www.w3.org/TR/REC-html40/struct/dirlang.html#langcodes
-    image: "http://example.com/image.png",
-    favicon: "http://example.com/favicon.ico",
-    copyright: "All rights reserved 2013, John Doe",
-    updated: new Date(2013, 6, 14), // optional, default = today
+    title: "XMR Community Art Fund",
+    description: "Contribute to the XMR Art Community",
+    content: "Test Content",
+    id: "123feedid",
+    link: "https://moneroart.neocities.org/",
+    language: "en",
+    image: "https://moneroart.neocities.org/monerochan-beach.jpg",
+    copyright: "All rights reserved 2013, Crypto Grampy",
     generator: "awesome", // optional, default = 'Feed for Node.js'
     feedLinks: {
-        json: "https://example.com/json",
-        atom: "https://example.com/atom"
+        json: "https://moneroart.neocities.org/submissions/json",
+        atom: "https://moneroart.neocities.org/submissions/atom"
     },
     author: {
-        name: "John Doe",
-        email: "johndoe@example.com",
-        link: "https://example.com/johndoe"
+        name: "CryptoGrampy",
+        email: "cryptogrampy@protonmail.com.com",
+        link: "https://cryptogrampy.com/"
     }
 });
 
 const post = {
-    title: 'Headpatting doggirl Wownero',
+    title: 'Headpatting Doggirl Wownero',
     id: '89gWT9S5mgx3gCJeADaS3Y57iBBot2QDVWaQweHbRxqphuHHfBJySiASCM8QRMRUhC6B2Mud2crtXHKCRkx96A8SJQAsUCk',
     link: 'plowsof.github.io/index-old.html#head_patting_girl',
     description: '89gWT9S5mgx3gCJeADaS3Y57iBBot2QDVWaQweHbRxqphuHHfBJySiASCM8QRMRUhC6B2Mud2crtXHKCRkx96A8SJQAsUCk',
-    date: new Date('1995-12-17T03:24:00'),
+    content: 'test Content',
     image: 'https://moneroart.neocities.org/monero.png'
 }
 
@@ -62,7 +61,6 @@ posts.forEach(post => {
                 link: "https://example.com/reggiemiller"
             }
         ],
-        date: post.date,
         image: post.image
     });
 });
