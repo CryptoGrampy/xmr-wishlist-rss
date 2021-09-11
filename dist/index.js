@@ -9,34 +9,35 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 import { Feed } from "feed";
 import axios from 'axios';
-const getData = () => __awaiter(void 0, void 0, void 0, function* () {
-    const res = yield axios.get('https://raw.githubusercontent.com/plowsof/wish-rss/main/wishlist-rss-draft.json');
+import fs from 'fs';
+const getData = (url) => __awaiter(void 0, void 0, void 0, function* () {
+    const res = yield axios.get(url);
     return res.data;
 });
-const generatePost = (wishItem, metadata) => {
+const generatePost = (item, metadata) => {
     return {
-        title: wishItem.description,
-        id: wishItem.id,
-        link: `${metadata.url}#${wishItem.id}`,
+        title: item.description,
+        id: item.id,
+        link: `${metadata.url}#${item.id}`,
         description: `
-        <p><strong>${wishItem.description}</strong></p>
-        <p>Donation Goal: ${wishItem.goal}</p>
+        <p><strong>${item.description}</strong></p>
+        <p>Donation Goal: ${item.goal} XMR</p>
         <p>Donation Address:</p>
-		<p>${wishItem.address}</p>
-        <p><img class="thumbnail" src="${wishItem.qr_img_url}" alt="Donate to this commission" /></p>
-		<p><a href="${metadata.url}#${wishItem.id}">View this commission on ${metadata.title}</a></p>
+		<p>${item.address}</p>
+        <p><img class="thumbnail" src="${item.qr_img_url}" alt="Donate to this commission" /></p>
+		<p><a href="${metadata.url}#${item.id}">View this commission on ${metadata.title}</a></p>
         `,
-        date: wishItem.created,
+        date: item.created,
         image: 'https://moneroart.neocities.org/monerochan-beach.jpg',
         author: [{
-                name: wishItem.author_name,
-                email: wishItem.author_email,
+                name: item.author_name,
+                email: item.author_email,
             }
         ],
     };
 };
-export const generateFeeds = () => __awaiter(void 0, void 0, void 0, function* () {
-    const wishlist = yield getData();
+export const generateFeeds = (wishlistDataUrl) => __awaiter(void 0, void 0, void 0, function* () {
+    const wishlist = yield getData(wishlistDataUrl);
     const postList = [];
     wishlist.wishlist.forEach(wish => postList.push(generatePost(wish, wishlist.metadata)));
     const feed = new Feed({
@@ -63,12 +64,8 @@ export const generateFeeds = () => __awaiter(void 0, void 0, void 0, function* (
     });
     feed.addCategory("Monero");
     feed.addCategory("Wishlist");
-    console.log(feed.rss2());
-    // Output: RSS 2.0
-    // console.log(feed.atom1());
-    // Output: Atom 1.0
-    // console.log(feed.json1());
-    // Output: JSON Feed 1.0
+    fs.writeFileSync(`dist/${wishlist.metadata.title.toLowerCase().replace(' ', '-')}-wishlist-rss2.xml`, feed.rss2().toString());
+    return feed.rss2();
 });
-generateFeeds();
+generateFeeds('https://raw.githubusercontent.com/plowsof/wish-rss/main/wishlist-rss-draft.json');
 //# sourceMappingURL=index.js.map

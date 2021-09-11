@@ -1,5 +1,6 @@
 import { Feed, Item } from "feed"
 import axios from 'axios'
+import fs from 'fs'
 
 export interface XmrWishlistV2 {
 	wishlist: XmrWishItemV2[]
@@ -43,37 +44,37 @@ export interface XmrWishItemV1 {
 	percent: number
 }
 
-const getData = async(): Promise<XmrWishlistV2> => {
-    const res = await axios.get('https://raw.githubusercontent.com/plowsof/wish-rss/main/wishlist-rss-draft.json')
+const getData = async(url: string): Promise<XmrWishlistV2> => {
+    const res = await axios.get(url)
 
 	return res.data as XmrWishlistV2
 }
 
-const generatePost = (wishItem: XmrWishItemV2, metadata: XmrWishlistV2['metadata']): Item => {
+const generatePost = (item: XmrWishItemV2, metadata: XmrWishlistV2['metadata']): Item => {
 	return {
-        title: wishItem.description,
-        id: wishItem.id,
-        link: `${metadata.url}#${wishItem.id}`,
+        title: item.description,
+        id: item.id,
+        link: `${metadata.url}#${item.id}`,
         description: `
-        <p><strong>${wishItem.description}</strong></p>
-        <p>Donation Goal: ${wishItem.goal}</p>
+        <p><strong>${item.description}</strong></p>
+        <p>Donation Goal: ${item.goal} XMR</p>
         <p>Donation Address:</p>
-		<p>${wishItem.address}</p>
-        <p><img class="thumbnail" src="${wishItem.qr_img_url}" alt="Donate to this commission" /></p>
-		<p><a href="${metadata.url}#${wishItem.id}">View this commission on ${metadata.title}</a></p>
+		<p>${item.address}</p>
+        <p><img class="thumbnail" src="${item.qr_img_url}" alt="Donate to this commission" /></p>
+		<p><a href="${metadata.url}#${item.id}">View this commission on ${metadata.title}</a></p>
         `,
-        date: wishItem.created,
+        date: item.created,
         image: 'https://moneroart.neocities.org/monerochan-beach.jpg',
 		author: [{
-			name: wishItem.author_name,
-			email: wishItem.author_email,
+			name: item.author_name,
+			email: item.author_email,
 		}
 	],
     }
 }
 
-export const generateFeeds = async(): Promise<void> => {
-    const wishlist = await getData()
+export const generateFeeds = async(wishlistDataUrl: string): Promise<string> => {
+    const wishlist = await getData(wishlistDataUrl)
 
 	const postList: Item[] = []
 
@@ -106,14 +107,9 @@ export const generateFeeds = async(): Promise<void> => {
     feed.addCategory("Monero");
 	feed.addCategory("Wishlist")
 
-    console.log(feed.rss2());
-    // Output: RSS 2.0
+	fs.writeFileSync(`dist/${wishlist.metadata.title.toLowerCase().replace(' ','-')}-wishlist-rss2.xml`, feed.rss2().toString())
 
-    // console.log(feed.atom1());
-    // Output: Atom 1.0
-
-    // console.log(feed.json1());
-    // Output: JSON Feed 1.0
+	return feed.rss2()
 }
 
-generateFeeds()
+generateFeeds('https://raw.githubusercontent.com/plowsof/wish-rss/main/wishlist-rss-draft.json')
