@@ -1,5 +1,5 @@
 {
-    "name": "wishlist-rss",
+    "name": "xmr-wishlist-rss",
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -11,14 +11,14 @@
     "type": "module",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/CryptoGrampy/wishlist-rss.git"
+        "url": "git+https://github.com/CryptoGrampy/xmr-wishlist-rss.git"
     },
     "author": "",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/CryptoGrampy/wishlist-rss/issues"
+        "url": "https://github.com/CryptoGrampy/xmr-wishlist-rss/issues"
     },
-    "homepage": "https://github.com/CryptoGrampy/wishlist-rss#readme",
+    "homepage": "https://github.com/CryptoGrampy/xmr-wishlist-rss#readme",
     "dependencies": {
         "axios": "^0.21.4",
         "feed": "^4.2.2"
