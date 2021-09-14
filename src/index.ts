@@ -70,12 +70,8 @@ export const generateRssFromWishlistUrl = async(wishlistDataUrl: string): Promis
 	return generateRssFromWishlistJson(wishlist)
 }
 
-export const generateRssFromWishlistJson = (wishlist: XmrWishlistV2): string => {
-	const postList: Item[] = []
-
-	wishlist.wishlist.forEach(wish => postList.push(generatePost(wish, wishlist.metadata)))
-
-    const feed = new Feed({
+const generateRssFromWishlistJson = (wishlist: XmrWishlistV2): string => {
+	const feed = new Feed({
         title: wishlist.metadata.title,
         description: wishlist.metadata.description,
         id: wishlist.metadata.title,
@@ -91,9 +87,9 @@ export const generateRssFromWishlistJson = (wishlist: XmrWishlistV2): string => 
         }
     });
 
-    postList.forEach(post => {
-        feed.addItem(post);
-    });
+	wishlist.wishlist.forEach(wish => {
+		feed.addItem(generatePost(wish, wishlist.metadata))
+	})
 
     feed.addCategory("Monero");
 	feed.addCategory("Wishlist")

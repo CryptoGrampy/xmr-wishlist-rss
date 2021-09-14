@@ -41,8 +41,6 @@ export const generateRssFromWishlistUrl = (wishlistDataUrl) => __awaiter(void 0,
     return generateRssFromWishlistJson(wishlist);
 });
 const generateRssFromWishlistJson = (wishlist) => {
-    const postList = [];
-    wishlist.wishlist.forEach(wish => postList.push(generatePost(wish, wishlist.metadata)));
     const feed = new Feed({
         title: wishlist.metadata.title,
         description: wishlist.metadata.description,
@@ -58,8 +56,8 @@ const generateRssFromWishlistJson = (wishlist) => {
             link: wishlist.metadata.url
         }
     });
-    postList.forEach(post => {
-        feed.addItem(post);
+    wishlist.wishlist.forEach(wish => {
+        feed.addItem(generatePost(wish, wishlist.metadata));
     });
     feed.addCategory("Monero");
     feed.addCategory("Wishlist");
