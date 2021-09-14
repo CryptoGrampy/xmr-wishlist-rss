@@ -70,7 +70,7 @@ export const generateRssFromWishlistUrl = async(wishlistDataUrl: string): Promis
 	return generateRssFromWishlistJson(wishlist)
 }
 
-const generateRssFromWishlistJson = (wishlist: XmrWishlistV2): string => {
+export const generateRssFromWishlistJson = (wishlist: XmrWishlistV2): string => {
 	const feed = new Feed({
         title: wishlist.metadata.title,
         description: wishlist.metadata.description,
