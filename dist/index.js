@@ -38,6 +38,9 @@ const generatePost = (item, metadata) => {
 };
 export const generateRssFromWishlistUrl = (wishlistDataUrl) => __awaiter(void 0, void 0, void 0, function* () {
     const wishlist = yield getData(wishlistDataUrl);
+    return generateRssFromWishlistJson(wishlist);
+});
+const generateRssFromWishlistJson = (wishlist) => {
     const postList = [];
     wishlist.wishlist.forEach(wish => postList.push(generatePost(wish, wishlist.metadata)));
     const feed = new Feed({
@@ -64,6 +67,6 @@ export const generateRssFromWishlistUrl = (wishlistDataUrl) => __awaiter(void 0,
     const title = 'XMR Community Art Fund';
     console.log(title.replace(/\s/g, '-'));
     return feed.rss2();
-});
+};
 generateRssFromWishlistUrl('https://raw.githubusercontent.com/CryptoGrampy/xmr-wishlist-rss/master/wishlist-aas-example-v2.json');
 //# sourceMappingURL=index.js.map

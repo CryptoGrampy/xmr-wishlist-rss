@@ -67,6 +67,10 @@ const generatePost = (item: XmrWishItemV2, metadata: XmrWishlistV2['metadata']):
 export const generateRssFromWishlistUrl = async(wishlistDataUrl: string): Promise<string> => {
     const wishlist = await getData(wishlistDataUrl)
 
+	return generateRssFromWishlistJson(wishlist)
+}
+
+const generateRssFromWishlistJson = (wishlist: XmrWishlistV2): string => {
 	const postList: Item[] = []
 
 	wishlist.wishlist.forEach(wish => postList.push(generatePost(wish, wishlist.metadata)))
