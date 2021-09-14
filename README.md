@@ -6,6 +6,8 @@ Simply update your wishlist and wishlist-rss, and your donors will receive an up
 
 <center>
 	<img src="assets/screenshot2.png" width="300">
+</center>
+<center>
 	<img src="assets/screenshot1.png" width="300">
 </center>
 
