@@ -4,7 +4,7 @@
         <title>XMR Community Art Fund</title>
         <link>https://moneroart.neocities.org/</link>
         <description>An XMR community art fund</description>
-        <lastBuildDate>Tue, 14 Sep 2021 01:47:54 GMT</lastBuildDate>
+        <lastBuildDate>Tue, 14 Sep 2021 01:49:50 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>awesome</generator>
         <language>en</language>
@@ -15,6 +15,21 @@
         </image>
         <category>Monero</category>
         <category>Wishlist</category>
+        <item>
+            <title><![CDATA[Test Addition 2]]></title>
+            <link>https://moneroart.neocities.org/#89gWT945mgx3</link>
+            <guid>89gWT945mgx3</guid>
+            <description><![CDATA[
+        <p><strong>Test Addition 2</strong></p>
+        <p>Donation Goal: 0.4 XMR</p>
+        <p>Donation Address:</p>
+		<p>89gWT9S5mgx3gCJADaS3Y57iBBot2QDVWaQweHbRxqphuHHfBJySiASCM8QRMRUhC6B2Mud2crtXHKCRkx96A8SJQAsUCk</p>
+        <p><img class="thumbnail" src="https://raw.githubusercontent.com/plowsof/wish-rss/main/qr-images/89gWT9S5mgx3.png" alt="Donate to this commission" /></p>
+		<p><a href="https://moneroart.neocities.org/#89gWT945mgx3">View this commission on XMR Community Art Fund</a></p>
+        ]]></description>
+            <author>Johndoe123@protonmail.com (John Doe)</author>
+            <enclosure url="https://moneroart.neocities.org/monerochan-beach.jpg" length="0" type="image/jpg"/>
+        </item>
         <item>
             <title><![CDATA[Test Addition]]></title>
             <link>https://moneroart.neocities.org/#89gWT9S5mgx3</link>
