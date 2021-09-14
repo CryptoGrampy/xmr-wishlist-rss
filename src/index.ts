@@ -100,7 +100,7 @@ const generateRssFromWishlistJson = (wishlist: XmrWishlistV2): string => {
 
 	fs.writeFileSync(`dist/${wishlist.metadata.title.toLowerCase().replace(/\s/g,'-')}-wishlist-rss2.xml`, feed.rss2().toString())
 
-	const title = 'XMR Community Art Fund'
-	console.log(title.replace(/\s/g,'-'))
 	return feed.rss2()
 }
+
+generateRssFromWishlistUrl('https://raw.githubusercontent.com/CryptoGrampy/xmr-wishlist-rss/master/wishlist-aas-example-v2.json')
