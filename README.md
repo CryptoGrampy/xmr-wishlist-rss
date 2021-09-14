@@ -19,8 +19,9 @@ Simply update your wishlist and wishlist-rss, and your donors will receive an up
 
 # Test it Out!
 
-Open this link on a mobile/desktop device that has an RSS reader installed (or just manually copy and paste the link into your RSS reader): https://raw.githubusercontent.com/CryptoGrampy/xmr-wishlist-rss/master/dist/xmr-community-art-fund-wishlist-rss2.xml
+Open this link (AND NOTE:  THIS IS DUMMY DATA! DON'T DONATE TO THESE ADDRESSES) on a mobile/desktop device that has an RSS reader installed (or just manually copy and paste the link into your RSS reader): https://raw.githubusercontent.com/CryptoGrampy/xmr-wishlist-rss/master/dist/xmr-community-art-fund-wishlist-rss2.xml
 
+Delete the feed afterwards.  Again, this is just a demo. 
 
 # Usage
 
