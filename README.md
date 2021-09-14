@@ -1,0 +1,1 @@
+# xmr-wishlist-rss
