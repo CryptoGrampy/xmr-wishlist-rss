@@ -14,13 +14,12 @@ export interface XmrWishlistV2 {
 		wallet_file_url: string
 		created_by: string
 		email: string
-		created: Date
-		modified: Date
+		created_date: Date
+		modified_date: Date
 	}
 }
 
 export interface XmrWishItemV2 {
-	title: string
 	id: string
 	description: string
 	goal: number
@@ -28,20 +27,11 @@ export interface XmrWishItemV2 {
 	contributors: number
 	address: string
 	percent: number
-	created: Date
-	modified: Date
+	created_date: Date
+	modified_date: Date
 	qr_img_url: string
 	author_name: string
 	author_email: string
-}
-
-export interface XmrWishItemV1 {
-	goal: number,
-	total: number,
-	contributors: number,
-	address: string,
-	desc: string,
-	percent: number
 }
 
 const getData = async(url: string): Promise<XmrWishlistV2> => {
@@ -63,8 +53,8 @@ const generatePost = (item: XmrWishItemV2, metadata: XmrWishlistV2['metadata']):
         <p><img class="thumbnail" src="${item.qr_img_url}" alt="Donate to this commission" /></p>
 		<p><a href="${metadata.url}#${item.id}">View this commission on ${metadata.title}</a></p>
         `,
-        date: item.created,
-        image: 'https://moneroart.neocities.org/monerochan-beach.jpg',
+        date: item.created_date,
+        image: metadata.image_url,
 		author: [{
 			name: item.author_name,
 			email: item.author_email,
@@ -73,9 +63,13 @@ const generatePost = (item: XmrWishItemV2, metadata: XmrWishlistV2['metadata']):
     }
 }
 
-export const generateFeeds = async(wishlistDataUrl: string): Promise<string> => {
+export const generateRssFeedFromWishlistUrl = async(wishlistDataUrl: string): Promise<string> => {
     const wishlist = await getData(wishlistDataUrl)
 
+	return generateRssFeedFromWishlist(wishlist)
+}
+
+export const generateRssFeedFromWishlist = (wishlist: XmrWishlistV2): string => {
 	const postList: Item[] = []
 
 	wishlist.wishlist.forEach(wish => postList.push(generatePost(wish, wishlist.metadata)))
@@ -86,13 +80,9 @@ export const generateFeeds = async(wishlistDataUrl: string): Promise<string> => 
         id: wishlist.metadata.title,
         link: wishlist.metadata.url,
         language: "en",
-        image: 'https://moneroart.neocities.org/monerochan-beach.jpg',
+        image: wishlist.metadata.image_url,
         copyright: "",
-        generator: "awesome", // optional, default = 'Feed for Node.js'
-        feedLinks: {
-            json: "https://moneroart.neocities.org/submissions/json",
-            atom: "https://moneroart.neocities.org/submissions/atom"
-        },
+        generator: "awesome",
         author: {
             name: wishlist.metadata.created_by,
             email: wishlist.metadata.email,
@@ -112,4 +102,4 @@ export const generateFeeds = async(wishlistDataUrl: string): Promise<string> => 
 	return feed.rss2()
 }
 
-generateFeeds('https://raw.githubusercontent.com/plowsof/wish-rss/main/wishlist-rss-draft.json')
+
