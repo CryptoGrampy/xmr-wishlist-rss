@@ -102,5 +102,3 @@ const generateRssFromWishlistJson = (wishlist: XmrWishlistV2): string => {
 
 	return feed.rss2()
 }
-
-generateRssFromWishlistUrl('https://raw.githubusercontent.com/CryptoGrampy/xmr-wishlist-rss/master/wishlist-aas-example-v2.json')
