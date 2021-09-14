@@ -36,7 +36,7 @@ OR
 2. Pipe in your wishlist JSON:
 
 ```node
-generateRssFromWishlist(wishlistJson)
+generateRssFromWishlistJson(wishlistJson)
 ```
 
 Add a link to the output RSS file to your website!  Update the file whenever a new item is added to your list.  Ensure your wishlist.json matches the XmrWishlistV2 format.
