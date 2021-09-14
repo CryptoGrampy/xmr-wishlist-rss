@@ -2,7 +2,7 @@
     "metadata": {
         "contributors": 31,
         "description": "An XMR community art fund",
-        "image": "https://moneroart.neocities.org/monerochan-beach.jpg",
+        "image_url": "https://moneroart.neocities.org/monerochan-beach.jpg",
         "main_address": "43YSiaRs1TuDQa4XrBQz46ZNFH5bc1kgUXoLDLvZ5VSH8Ubtqh2AQP7fz2YD173cxNBkk3nYJbGGDKLdDbnbtUWYDhy6hTu",
         "modified": "2021-09-09 01:25:22.213334",
         "restore_height": "2434562",
