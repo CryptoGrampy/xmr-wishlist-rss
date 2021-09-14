@@ -12,35 +12,6 @@
         "viewkey": "157c384994dc34ec77705050b3cb47837deea7282fafcfa0762a5a8a464a8e0e"
     },
     "wishlist": [{
-            "address": "89gWT9S5mgx3gCJADaS3Y57iBBot2QDVWaQweHbRxqphuHHfBJySiASCM8QRMRUhC6B2Mud2crtXHKCRkx96A8SJQAsUCk",
-            "author_email": "Johndoe123@protonmail.com",
-            "author_name": "John Doe",
-            "contributors": 0,
-            "created_date": "2021-09-14 23:19:32.849011",
-            "description": "Test Addition 2",
-            "goal": 0.4,
-            "id": "89gWT945mgx3",
-            "modified_date": "2021-09-12 23:17:32.849052",
-            "percent": 100,
-            "qr_img_url": "https://raw.githubusercontent.com/plowsof/wish-rss/main/qr-images/89gWT9S5mgx3.png",
-            "title": "",
-            "total": 0.3
-        }, {
-            "address": "89gWT9S5mgx3gCJeADaS3Y57iBBot2QDVWaQweHbRxqphuHHfBJySiASCM8QRMRUhC6B2Mud2crtXHKCRkx96A8SJQAsUCk",
-            "author_email": "Johndoe123@protonmail.com",
-            "author_name": "John Doe",
-            "contributors": 1,
-            "created_date": "2021-09-13 23:17:32.849011",
-            "description": "Test Addition",
-            "goal": 0.4,
-            "id": "89gWT9S5mgx3",
-            "modified_date": "2021-09-10 23:17:32.849052",
-            "percent": 100,
-            "qr_img_url": "https://raw.githubusercontent.com/plowsof/wish-rss/main/qr-images/89gWT9S5mgx3.png",
-            "title": "",
-            "total": 0.4
-        },
-        {
             "address": "89gWT9S5mgx3gCJeADaS3Y57iBBot2QDVWaQweHbRxqphuHHfBJySiASCM8QRMRUhC6B2Mud2crtXHKCRkx96A8SJQAsUCk",
             "author_email": "Johndoe123@protonmail.com",
             "author_name": "John Doe",
