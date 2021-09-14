@@ -40,7 +40,7 @@ export const generateRssFromWishlistUrl = (wishlistDataUrl) => __awaiter(void 0,
     const wishlist = yield getData(wishlistDataUrl);
     return generateRssFromWishlistJson(wishlist);
 });
-const generateRssFromWishlistJson = (wishlist) => {
+export const generateRssFromWishlistJson = (wishlist) => {
     const feed = new Feed({
         title: wishlist.metadata.title,
         description: wishlist.metadata.description,
@@ -64,5 +64,4 @@ const generateRssFromWishlistJson = (wishlist) => {
     fs.writeFileSync(`dist/${wishlist.metadata.title.toLowerCase().replace(/\s/g, '-')}-wishlist-rss2.xml`, feed.rss2().toString());
     return feed.rss2();
 };
-generateRssFromWishlistUrl('https://raw.githubusercontent.com/CryptoGrampy/xmr-wishlist-rss/master/wishlist-aas-example-v2.json');
 //# sourceMappingURL=index.js.map
