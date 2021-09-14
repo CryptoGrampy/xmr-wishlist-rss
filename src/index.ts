@@ -14,12 +14,13 @@ export interface XmrWishlistV2 {
 		wallet_file_url: string
 		created_by: string
 		email: string
-		created_date: Date
-		modified_date: Date
+		created: Date
+		modified: Date
 	}
 }
 
 export interface XmrWishItemV2 {
+	title: string
 	id: string
 	description: string
 	goal: number
@@ -27,8 +28,8 @@ export interface XmrWishItemV2 {
 	contributors: number
 	address: string
 	percent: number
-	created_date: Date
-	modified_date: Date
+	created: Date
+	modified: Date
 	qr_img_url: string
 	author_name: string
 	author_email: string
@@ -53,7 +54,7 @@ const generatePost = (item: XmrWishItemV2, metadata: XmrWishlistV2['metadata']):
         <p><img class="thumbnail" src="${item.qr_img_url}" alt="Donate to this commission" /></p>
 		<p><a href="${metadata.url}#${item.id}">View this commission on ${metadata.title}</a></p>
         `,
-        date: item.created_date,
+        date: item.created,
         image: metadata.image_url,
 		author: [{
 			name: item.author_name,
@@ -63,13 +64,9 @@ const generatePost = (item: XmrWishItemV2, metadata: XmrWishlistV2['metadata']):
     }
 }
 
-export const generateRssFeedFromWishlistUrl = async(wishlistDataUrl: string): Promise<string> => {
+export const generateRssFromWishlistUrl = async(wishlistDataUrl: string): Promise<string> => {
     const wishlist = await getData(wishlistDataUrl)
 
-	return generateRssFeedFromWishlist(wishlist)
-}
-
-export const generateRssFeedFromWishlist = (wishlist: XmrWishlistV2): string => {
 	const postList: Item[] = []
 
 	wishlist.wishlist.forEach(wish => postList.push(generatePost(wish, wishlist.metadata)))
@@ -97,9 +94,9 @@ export const generateRssFeedFromWishlist = (wishlist: XmrWishlistV2): string => 
     feed.addCategory("Monero");
 	feed.addCategory("Wishlist")
 
-	fs.writeFileSync(`dist/${wishlist.metadata.title.toLowerCase().replace(' ','-')}-wishlist-rss2.xml`, feed.rss2().toString())
+	fs.writeFileSync(`dist/${wishlist.metadata.title.toLowerCase().replace(/\s/g,'-')}-wishlist-rss2.xml`, feed.rss2().toString())
 
+	const title = 'XMR Community Art Fund'
+	console.log(title.replace(/\s/g,'-'))
 	return feed.rss2()
 }
-
-
